@@ -1,3 +1,14 @@
+type Cities
+{
+    city_id: Int!,
+    city_name: String!,
+    country_id: Int!
+}
 type Query{
-    name: String!
+    cities: [Cities]!
+    city(city_name: String!): Cities
+}
+
+type Mutation {
+    createCity(city_id: Int!, city_name: String!, country_id: Int!): Cities!
 }

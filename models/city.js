@@ -1,11 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
 class city extends Model {
-    constructor(tableName)
-    {
-      super(tableName, tableName);
-      this.tableName = 'city';
-    }
 }
 
 const schema = {
@@ -17,7 +12,7 @@ const schema = {
 export default (sequelize) => {
   city.init(schema, {
     sequelize,
-    tableName: city.tableName,
+    tableName: 'city',
   });
 
   return city;
