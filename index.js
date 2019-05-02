@@ -23,10 +23,10 @@ async function start()
   await models.sequelize.authenticate({ force: true });
   console.log("sync successfully");
   const city = await models.city.findOne({
-    where: { city_id: 1 }
+    where: { city_id: 2 }
   })
   .then((city) => {
-    console.log('city: ', city.dataValues);
+    console.log('city: ', city);
   });
   server.start(() => console.log("server start"));
 }

@@ -1,3 +1,21 @@
+type Airs
+{
+    flight_id: Int!,
+    airlines_name: String!,
+    arrival_city: String!,
+    departure_city: String!,
+    price: Int!,
+    departure_date: String!,
+    return_date: String!
+}
+type Users
+{
+    user_id: Int!,
+    user_name: String!,
+    email: String!,
+    phone_number: String!,
+    role_id: String!
+}
 type Cities
 {
     city_id: Int!,
@@ -7,8 +25,16 @@ type Cities
 type Query{
     cities: [Cities]!
     city(city_name: String!): Cities
+    users: [Users]!
+    user(email: String!): Users
+    air(flight_id: String!): Airs
+    airs_dep(departure_city: String!): Airs
+    airs_price(price: String!): Airs
+    airs_date(departure_date: String!, return_date: String!): Airs
+    airs_all: [Airs]!
 }
 
 type Mutation {
     createCity(city_id: Int!, city_name: String!, country_id: Int!): Cities!
 }
+

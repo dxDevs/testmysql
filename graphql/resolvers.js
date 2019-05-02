@@ -9,12 +9,40 @@ import models from '../models';
 const resolvers = {
         Query: {
             cities:() => {
-                return models.city.all();
+                console.log("find cities");
+                return models.city.findAll();
             },
             city:(_, args) => {
-                return models.city.find({
+                console.log(args);
+                return models.city.findOne({
                     where: args
                 })
+            },
+            users:() => {
+                console.log("find users");
+                return models.user.findAll();
+            },
+            user:(_, args) => {
+                console.log(args);
+                return models.user.findOne({
+                    where: args
+                })
+            },
+            air:(_, args) => {
+                console.log("array : " + args);
+                return models.air.findAll({
+                    where: args
+                })
+            },
+            airs_price:(_, args) => {
+                console.log("price : " + args);
+                return models.air.findAll({
+                    where: args
+                })
+            },
+            airs_all:() => {
+                console.log("find airs");
+                return models.air.findAll();
             }
         },
         Mutation: {

@@ -1,9 +1,12 @@
 import Sequelize from 'sequelize';
 
-const sequelize = new Sequelize('database', 'user', 'pw', 
+const sequelize = new Sequelize('db', 'user', 'pw', 
 { 
     host: 'ip',
-    dialect: 'mysql' 
+    dialect: 'mysql',
+    define: {
+        timestamps: false
+    }
 })
 
 export default sequelize;
