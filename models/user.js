@@ -11,6 +11,10 @@ const schema = {
   user_name: Sequelize.STRING,
   email: Sequelize.STRING,
   phone_number: Sequelize.STRING,
+  password: Sequelize.STRING,
+  date_of_birth: Sequelize.STRING,
+  created_date: Sequelize.STRING,
+  last_update: Sequelize.STRING,
   role_id: Sequelize.STRING
 };
 
