@@ -22,16 +22,101 @@ type Cities
     city_name: String!,
     country_id: Int!
 }
+type Countries
+{
+    country_id: Int!,
+    country_name: String!,
+    country_region: String!,
+    language: String!
+}
+type Hotels
+{
+    hotel_id: Int!,
+    hotel_name: String!,
+    number_room: String!,
+    picture: String!,
+    price: Int!,
+    rating: Int!,
+    city_id: Int!,
+}
+type Landmarks
+{
+    landmark_id: Int!,
+    landmark_name: String!,
+    landmark_type: Int!,
+    picture: String!,
+    price: Int!,
+    city_id: Int!,
+}
+type Offers
+{
+    offer_id: Int!
+    offer_name: String!,
+    offer_area: String!,
+    time_created: String!,
+    acrivate_from: String!,
+    activate_to: String!,
+    keyward: String!,
+    description: String!,
+}
+type Restaurants
+{
+    restaurant_id: Int!,
+    restaurant_name: String!,
+    food_type: Int!,
+    no_smokin_area: Int!
+}
+type Roles
+{
+    role_id: Int!,
+    role_name: String!,
+    desc: String!
+}
+type Schedules
+{
+    schedule_id: Int!,
+    schedule_day: String!,
+    offer_id: Int!,
+    city_id: Int!
+}
+type Tasks
+{
+    task_id: Int!,
+    task_type: Int!,
+    dscription: String!,
+    start_time: String!,
+    end_time: String!,
+    schedule_id: Int!
+}
+
+
 type Query{
     cities: [Cities]!
     city(city_name: String!): Cities
+
     users: [Users]!
     user(email: String!): Users
+
     air(flight_id: String!): Airs
-    airs_dep(departure_city: String!): Airs
-    airs_price(price: String!): Airs
-    airs_date(departure_date: String!, return_date: String!): Airs
-    airs_all: [Airs]!
+    airs_dep(departure_city: String!): [Airs]!
+    airs_price(price: String!): [Airs]!
+    airs_date(departure_date: String!, return_date: String!): [Airs]!
+    airs: [Airs]!
+
+    countries: [Countries]!
+    country(country_id: String!): Countries
+
+    hotels: [Hotels]!
+    hotel(hotel_id: String!): Hotels
+
+    landmarks: [Landmarks]!
+    landmark(landmark_id: String!): Landmarks
+
+    schedules: [Schedules]!
+    schedule(schedule_id: String!): Schedules
+
+    tasks: [Tasks]!
+    task(task_id: String!): Tasks
 }
 
 type Mutation {

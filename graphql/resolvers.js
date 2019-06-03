@@ -29,21 +29,68 @@ const resolvers = {
                 })
             },
             air:(_, args) => {
-                console.log("array : " + args);
-                return models.air.findAll({
+                return models.air.findOne({
                     where: args
                 })
             },
             airs_price:(_, args) => {
-                console.log("price : " + args);
                 return models.air.findAll({
                     where: args
                 })
             },
-            airs_all:() => {
-                console.log("find airs");
+            airs_dep:(_, args) => {
+                return models.air.findAll({
+                    where: args
+                })
+            },
+            airs:() => {
                 return models.air.findAll();
-            }
+            },
+            countries:() => {
+                return models.country.findAll();
+            },
+            country:(_, args) => {
+                console.log(args);
+                return models.country.findOne({
+                    where: args
+                })
+            },
+            hotels:() => {
+                return models.hotel.findAll();
+            },
+            hotel:(_, args) => {
+                console.log(args);
+                return models.hotel.findOne({
+                    where: args
+                })
+            },
+            landmarks:() => {
+                return models.landmark.findAll();
+            },
+            landmark:(_, args) => {
+                console.log(args);
+                return models.landmark.findOne({
+                    where: args
+                })
+            },
+            schedules:() => {
+                return models.schedule.findAll();
+            },
+            schedule:(_, args) => {
+                console.log(args);
+                return models.schedule.findOne({
+                    where: args
+                })
+            },
+            tasks:() => {
+                return models.task.findAll();
+            },
+            task:(_, args) => {
+                console.log(args);
+                return models.task.findOne({
+                    where: args
+                })
+            },
         },
         Mutation: {
             createCity: (_,args) =>
