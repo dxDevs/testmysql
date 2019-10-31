@@ -8,7 +8,7 @@
   "dependencies": {
     "graphql-yoga": "^1.17.4",
     "mysql": "^2.16.0",
-    "sequelize": "^5.1.0"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
